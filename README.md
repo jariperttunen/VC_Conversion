@@ -1,1 +1,1 @@
-Sample projects to convert CVS and HG reposotories to Git.
+Sample projects to convert CVS and HG repositories to Git.
