@@ -1,11 +1,15 @@
-#https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/
-#cvs2svn project includes cvs2git
-#Commands to convert cvs repository to git, example is lignum core-model. 
-mkdir cvsrepo
-mkdir gitrepo
+## Converting cvs to git
 
-cd cvsrepo
-#For core-model <project> is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics
+The example is lignum-core.
+Detailed [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/)
+cvs2svn project includes cvs2git
+
+Commands to convert cvs repository to git, example is lignum core-model. 
++ mkdir cvsrepo
++ mkdir gitrepo
++ cd cvsrepo
+
+For each core-model <project> is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics
 rsync -av jarip@redmine.ns.luke.fi:/home/cvs/<project> .
 
 cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
