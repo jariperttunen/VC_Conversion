@@ -1,32 +1,40 @@
 ## Converting cvs to git
 
-The example is lignum-core.
+The example is for lignum-core repository.
 Detailed [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/)
-cvs2svn project includes cvs2git
+The cvs2svn MacPorts port includes the required cvs2git.
 
-Commands to convert cvs repository to git, example is lignum core-model. 
+### Commands to convert cvs repository to git. 
+
 + mkdir cvsrepo
 + mkdir gitrepo
 + cd cvsrepo
 
-For each core-model <project> is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics
-rsync -av jarip@redmine.ns.luke.fi:/home/cvs/<project> .
+For each lignum core-model `<project>` rsync from the original cvs repository:
++ rsync -av \<user\>@\<server\>:/home/cvs/<project>
 
-cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
-#Create empty main (root) repository
-cd ../gitrepo/
-git init --bare lignum-core.git
-cd lignum-core.git
-#import git files created by cvs2git
-cat ../git-blob.dat ../git-dump.dat | git fast-import
-git gc --prune=now
-cd ..
-#Clone the main repository and add it to GitHub
-git clone lignum-core.git
-cd lignum-core
-#To GitHub
-git remote add origin https://github.com/jariperttunen/lignum-core.git
-git add --all
-git commit -m "Conversion from CVS to Git"
-git push -u origin master
-git remote -v
+where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
+The server part is optional if you have direct access to repository.
+
++cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
+
+Create empty main (root) repository:
++ cd ../gitrepo/
++ git init --bare lignum-core.git
++ cd lignum-core.git
+
+Import git files created by cvs2git:
++ cat ../git-blob.dat ../git-dump.dat | git fast-import
++ git gc --prune=now
++ cd ..
+
+Clone the main repository and add it to GitHub
++ git clone lignum-core.git
++ cd lignum-core
+
+Optional: Push to GitHub
++ git remote add origin https://github.com/<githubuser\>/lignum-core.git
++ git add --all
++ git commit -m "Conversion from CVS to Git"
++ git push -u origin master
++ git remote -v
