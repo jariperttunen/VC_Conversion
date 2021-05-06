@@ -1,7 +1,7 @@
 ## Converting cvs to git
 
 The example is for lignum-core repository.
-Detailed [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/)
+See detailed [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
 The cvs2svn MacPorts port includes the required cvs2git.
 
 ### Commands to convert cvs repository to git. 
