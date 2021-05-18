@@ -18,6 +18,8 @@ The server part is optional if you have direct access to repository.
 
 + cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
 
+Note that CVSROOT is mandatory if other projects need conversion to Git. For example for project FineRoots both CVSROOT and FineRoots both must appear after rsync.
+
 Create empty main (root) repository:
 + cd ../gitrepo/
 + git init --bare lignum-core.git
