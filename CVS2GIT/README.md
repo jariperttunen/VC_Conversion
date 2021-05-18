@@ -29,11 +29,13 @@ Import git files created by cvs2git:
 + cat ../git-blob.dat ../git-dump.dat | git fast-import
 + git gc --prune=now
 
-Note that the `bare` Git repository shows only adminstrative files. To use the lignum-core the bare (admistrative) repository
-must be cloned to working repository:
+Note that the `bare` Git repository shows only adminstrative files. To use the lignum-core.git this bare (admistrative) repository
+must be cloned to working repository, lignum-core:
 + cd ..
 + git clone lignum-core.git
 + cd lignum-core
+
+I lignum-core the projects files are now visible.
 
 Optional: Push to GitHub
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
