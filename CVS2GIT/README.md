@@ -28,9 +28,10 @@ Create empty main (root) repository:
 Import git files created by cvs2git:
 + cat ../git-blob.dat ../git-dump.dat | git fast-import
 + git gc --prune=now
-+ cd ..
 
-Clone the main repository and add it to GitHub
+Note that the `bare` Git repository shows only adminstrative files. To use the lignum-core the repository
+must be cloned:
++ cd ..
 + git clone lignum-core.git
 + cd lignum-core
 
