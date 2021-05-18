@@ -11,7 +11,7 @@ The cvs2svn MacPorts port includes the required cvs2git.
 + cd cvsrepo
 
 For each lignum core-model `<project>` rsync from the original cvs repository:
-+ rsync -av \<user\>@\<server\>:/home/cvs/<project>
++ rsync -av \<user\>@\<server\>:/home/cvs/\<project\>
 
 where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
 The server part is optional if you have direct access to repository.
