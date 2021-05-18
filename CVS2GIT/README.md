@@ -4,7 +4,7 @@ The example is for lignum-core repository.
 See detailed [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
 The cvs2svn MacPorts port includes the required cvs2git.
 
-### Commands to convert cvs repository to git. 
+### Commands to convert CVS repository to Git. 
 
 + mkdir cvsrepo
 + mkdir gitrepo
@@ -18,7 +18,7 @@ The server part is optional if you have direct access to repository.
 
 + cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
 
-Note that CVSROOT is mandatory if other projects need conversion to Git. For example for project FineRoots both CVSROOT and FineRoots both must appear after rsync.
+Note that CVSROOT is mandatory if other projects need conversion to Git. cvs2git needs it in conversion. For example for project FineRoots both CVSROOT and FineRoots both must appear after rsync. CVSROOT can be deleted from Git repository after conversion. 
 
 Create empty main (root) repository:
 + cd ../gitrepo/
