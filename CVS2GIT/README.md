@@ -45,4 +45,4 @@ Optional: Push to GitHub
 + git push -u origin master
 + git remote -v
 
-The name *origin* may already exists. Change it for example to *main* in `git add`.  
+The name *origin* may already exist. Change it for example to *main* in `git add`.  
