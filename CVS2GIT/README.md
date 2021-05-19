@@ -39,6 +39,7 @@ The projects files are now visible in lignum-core.
 
 Optional: Push local repository to GitHub
 + Create empty *lignum-core* repository in GitHub
+Still in lignum-core directory
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
 + git add --all
 + git commit -m "Conversion from CVS to Git"
