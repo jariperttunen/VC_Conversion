@@ -1,31 +1,34 @@
 ## Converting CVS repository to Git repository
 
-The example is for lignum-core repository.
-See detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
+The example is for *lignum-core* CVS repository. Adjust workflow for each specific case.
+See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
 The cvs2svn MacPorts port includes the required cvs2git.
 
 ### Step by step commands to convert CVS repository to Git. 
-
+First, create two directories, one for CVS and one for the Git.
 + mkdir cvsrepo
 + mkdir gitrepo
 + cd cvsrepo
 
-For each lignum core-model `<project>` rsync from the original cvs repository:
+For each lignum core-model `<project>` rsync from the original cvs repository */home/cvs/*:
 + rsync -av \<user\>@\<server\>:/home/cvs/\<project\> .
 
 where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
 The server part is optional if you have direct access to repository.
 
+Then do the conversion:
 + cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=jarip --fallback-encoding=ascii . >> coremodel.log
 
-Note that CVSROOT is mandatory if other projects need conversion to Git. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT and FineRoots both must appear after rsync. CVSROOT can be deleted from the Git repository after conversion. 
+Note that CVSROOT is mandatory. `cvs2git` needs it in conversion. For example for the project 
+FineRoots in CVS both CVSROOT and FineRoots both must appear after rsync. CVSROOT can be deleted 
+from the Git repository after conversion. 
 
 Create empty main (root) repository:
 + cd ../gitrepo/
 + git init --bare lignum-core.git
 + cd lignum-core.git
 
-Import git files created by cvs2git:
+Import Git files created by cvs2git:
 + cat ../git-blob.dat ../git-dump.dat | git fast-import
 + git gc --prune=now
 
@@ -37,7 +40,7 @@ Note that the `bare` Git repository shows only adminstrative files. To use the l
 
 The projects files are now visible in lignum-core.
 
-Optional: Push local repository to GitHub
+#### Optional: Push local repository to GitHub
 + Create empty *lignum-core* repository in GitHub
 
 Still in lignum-core directory
