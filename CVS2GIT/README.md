@@ -32,13 +32,14 @@ Import Git files created by cvs2git:
 + cat ../git-blob.dat ../git-dump.dat | git fast-import
 + git gc --prune=now
 
-Note that the `bare` Git repository shows only adminstrative files. To use the lignum-core.git this bare 
-(central admistrative) repository must be cloned to working repository, lignum-core:
+Note that the so called *bare* Git repository shows only adminstrative files. To use the lignum-core.git this bare 
+repository must be cloned to working repository, lignum-core:
 + cd ..
 + git clone lignum-core.git
 + cd lignum-core
 
-The projects files are now visible in lignum-core.
+The project files are now visible in lignum-core. Note that CVS lignum-core projects became a directories in Git.
+In CVS *lignum-core* alias name could check them out at once, in Git lignum-core is now a single repository. 
 
 #### Optional: Push local repository to GitHub
 + Create empty *lignum-core* repository in GitHub
