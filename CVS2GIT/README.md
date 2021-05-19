@@ -38,7 +38,7 @@ repository must be cloned to working repository, lignum-core:
 + git clone lignum-core.git
 + cd lignum-core
 
-The project files are now visible in lignum-core. Note that CVS lignum-core projects became a directories in Git.
+The project files are now visible in lignum-core. Note that CVS lignum-core projects became directories in Git.
 In CVS *lignum-core* alias name could check them out at once, in Git lignum-core is a single repository. 
 
 #### Optional: Push local repository to GitHub
