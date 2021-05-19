@@ -38,8 +38,11 @@ Note that the `bare` Git repository shows only adminstrative files. To use the l
 The projects files are now visible in lignum-core.
 
 Optional: Push to GitHub
++ Create lignum-core repository in GitHub
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
 + git add --all
 + git commit -m "Conversion from CVS to Git"
 + git push -u origin master
 + git remote -v
+
+The name *origin* may already exists. Change it for example to *main* in `git add`.  
