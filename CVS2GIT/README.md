@@ -43,6 +43,7 @@ Optional: Push to GitHub
 + git add --all
 + git commit -m "Conversion from CVS to Git"
 + git push -u origin master
-+ git remote -v
++ Check the remote repositories
+  + git remote -v
 
 The name *origin* may already exist. Change it for example to *main* in `git add` and `git push`.  
