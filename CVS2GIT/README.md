@@ -46,4 +46,4 @@ Optional: Push local repository to GitHub
 + Check the remote repositories
   + git remote -v
 
-The name *origin* may already exist. Change it for example to *main* in `git add` and `git push`.  
+The name *origin* may already exist. Change it for example to *main* in `git remote add` and `git push`.  
