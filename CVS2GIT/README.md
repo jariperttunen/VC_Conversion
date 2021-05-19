@@ -23,7 +23,7 @@ Note that CVSROOT is mandatory. `cvs2git` needs it in conversion. For example fo
 FineRoots in CVS both CVSROOT and FineRoots both must appear after rsync. CVSROOT can be deleted 
 from the Git repository after conversion. 
 
-Create empty main (root) repository:
+Change to gitrepo and create empty main (root) repository:
 + cd ../gitrepo/
 + git init --bare lignum-core.git
 + cd lignum-core.git
