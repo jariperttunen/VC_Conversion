@@ -16,7 +16,7 @@ For each lignum core-model `<project>` rsync from the original cvs repository */
 where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
 The server part is optional if you have direct access to repository.
 
-Then do the conversion. The \<user\> denotes the user name, owner, of the repository files:
+Then do the conversion. The \<user\> denotes the user name, owner, of the repository files to appear in Git:
 + cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=\<user\> --fallback-encoding=ascii . >> coremodel.log
 
 Note that CVSROOT is mandatory. `cvs2git` needs it in conversion. For example for the project 
