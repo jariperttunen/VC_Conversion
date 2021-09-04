@@ -14,7 +14,7 @@ For each lignum core-model `<project>` rsync from the original cvs repository */
 + rsync -av \<user\>@\<server\>:/home/cvs/\<project\>.
 
 where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
-The server part is optional if you have direct access to repository. The CVSROOT is always mandatory. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT *and* FineRoots both must appear after rsync. 
+The server part is not needed if you have direct access to repository. The CVSROOT is always mandatory. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT *and* FineRoots both must appear after rsync. 
 CVSROOT can be deleted from the Git repository after conversion. 
 
 Next, do the conversion. The \<user\> denotes the user name, owner, of the repository files to appear in Git:
