@@ -1,8 +1,8 @@
 ## Converting CVS repository to Git repository
 
 The example is for *lignum-core* CVS projects. Adjust workflow for each specific case.
-See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
-The `cvs2svn` MacPorts port includes the required `cvs2git`.
+See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/). The `cvs2svn` includes the required `cvs2git`. Naturally `cvs` is also needed. Both are
+available from MacPorts.
 
 ### Step by step commands to convert CVS repository to Git. 
 First, create two directories, one for CVS and one for the Git.
