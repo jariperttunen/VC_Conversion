@@ -1,8 +1,11 @@
 ## Converting CVS repository to Git repository
 
 The example is for *lignum-core* CVS projects. Adjust workflow for each specific case.
-See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/). The `cvs2svn` includes the required `cvs2git`. Naturally `cvs` is also needed. Both are
-available from MacPorts.
+See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/). MacPorts has required software:
+
++ cvs
++ cvs2svn, includes the required cvs2git.
+
 
 ### Step by step commands to convert CVS repository to Git. 
 First, create two directories, one for CVS and one for the Git.
@@ -13,8 +16,7 @@ First, create two directories, one for CVS and one for the Git.
 For each lignum core-model `<project>` rsync from the original cvs repository */home/cvs/*:
 + rsync -av \<user\>@\<server\>:/home/cvs/\<project\> .
 
-where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
-The server part is not needed if you have direct access to repository. The CVSROOT is always mandatory. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT *and* FineRoots both must appear after rsync. 
+where `<project>` is (one at a time): CVSROOT, c++adt, stl-lignum, Firmament, stl-voxelspace, XMLTree, LEngine, Pine, qt-workbench, Graphics. The dot (`.`) at the end denotes the current directory. The user and server part for remote connection are not needed if you have direct access to the repository. The CVSROOT is always mandatory. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT *and* FineRoots both must appear after rsync. 
 CVSROOT can be deleted from the Git repository after conversion. 
 
 Next, do the conversion. The \<user\> denotes the user name, owner, of the repository files to appear in Git:
