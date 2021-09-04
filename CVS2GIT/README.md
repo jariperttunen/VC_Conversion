@@ -2,7 +2,7 @@
 
 The example is for *lignum-core* CVS projects. Adjust workflow for each specific case.
 See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/).
-The cvs2svn MacPorts port includes the required cvs2git.
+The `cvs2svn` MacPorts port includes the required `cvs2git`.
 
 ### Step by step commands to convert CVS repository to Git. 
 First, create two directories, one for CVS and one for the Git.
@@ -11,17 +11,14 @@ First, create two directories, one for CVS and one for the Git.
 + cd cvsrepo
 
 For each lignum core-model `<project>` rsync from the original cvs repository */home/cvs/*:
-+ rsync -av \<user\>@\<server\>:/home/cvs/\<project\> .
++ rsync -av \<user\>@\<server\>:/home/cvs/\<project\>.
 
 where `<project>` is (one at a time): CVSROOT,c++adt,stl-lignum,Firmament,stl-voxelspace,XMLTree,LEngine,Pine,qt-workbench,Graphics.
-The server part is optional if you have direct access to repository.
+The server part is optional if you have direct access to repository. The CVSROOT is always mandatory. `cvs2git` needs it in conversion. For example for the project FineRoots in CVS both CVSROOT *and* FineRoots both must appear after rsync. 
+CVSROOT can be deleted from the Git repository after conversion. 
 
-Then do the conversion. The \<user\> denotes the user name, owner, of the repository files to appear in Git:
+Next, do the conversion. The \<user\> denotes the user name, owner, of the repository files to appear in Git:
 + cvs2git --blobfile=../gitrepo/git-blob.dat --dumpfile=../gitrepo/git-dump.dat --retain-conflicting-attic-files  --username=\<user\> --fallback-encoding=ascii . >> coremodel.log
-
-Note that CVSROOT is mandatory. `cvs2git` needs it in conversion. For example for the project 
-FineRoots in CVS both CVSROOT and FineRoots both must appear after rsync. CVSROOT can be deleted 
-from the Git repository after conversion. 
 
 Change to gitrepo and create empty *bare* Git repository:
 + cd ../gitrepo/
@@ -41,15 +38,18 @@ repository must be cloned to create working repository lignum-core:
 The project files are now visible in lignum-core. Note that CVS lignum-core projects became directories in Git.
 In CVS *lignum-core* alias name could check them out at once, in Git lignum-core is a single repository. 
 
-#### Optional: Push local repository to GitHub
-+ Create empty *lignum-core* repository in GitHub
+#### Push local repository to GitHub
 
-Still in lignum-core directory
+See also GitHub instructions to [add existing project to GitHub](https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line)
+
++ Create new repository (e.g. *lignum-core*) in GitHub
+
+Following the example still in lignum-core directory
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
-+ git add --all
-+ git commit -m "Conversion from CVS to Git"
-+ git push -u origin master
 + Check the remote repositories
   + git remote -v
++ git add --all
++ git commit -m "Conversion from CVS to Git"
++ git push -u origin main
 
-The name *origin* may already exist. Change it for example to *main* in `git remote add` and `git push`.  
+GitHub should show your project.
