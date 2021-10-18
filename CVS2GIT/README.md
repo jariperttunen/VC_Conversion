@@ -54,7 +54,7 @@ Following the example still in lignum-core directory
 Add GitHub repository as remote with name origin
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
 
-Check the remote repositories and current branch, push the current branch to GitHub 
+Check the remote repositories and current branch, push the current branch (master) to GitHub 
   + git remote -v
   + git branch
   + git push -u origin master
