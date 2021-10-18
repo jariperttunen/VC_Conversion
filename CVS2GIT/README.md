@@ -47,7 +47,7 @@ See also GitHub instructions to [add existing project to GitHub](https://docs.gi
 + Create new repository (e.g. *lignum-core*) in GitHub
 
 Following the example still in lignum-core directory
-+ Check the name of the remote original repository and rename it 
++ Check the name of the original just cloned repository (lignum-core.git) and rename it 
   + git remote -v
   + git remote rename origin origincvs
  
