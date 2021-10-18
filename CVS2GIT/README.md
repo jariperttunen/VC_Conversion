@@ -4,7 +4,7 @@ The example is for *lignum-core* CVS projects. Adjust workflow for each specific
 See also detailed original [instructions](https://osric.com/chris/accidental-developer/2018/03/converting-cvs-to-git-repository/). MacPorts has required software:
 
 + cvs
-+ cvs2svn, includes cvs2git.
++ cvs2svn (includes cvs2git)
 
 
 ### Step by step commands to convert CVS repository to Git. 
