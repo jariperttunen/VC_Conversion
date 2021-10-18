@@ -47,11 +47,16 @@ See also GitHub instructions to [add existing project to GitHub](https://docs.gi
 + Create new repository (e.g. *lignum-core*) in GitHub
 
 Following the example still in lignum-core directory
-+ git remote rename origin origincvs
++ Check the name of the remote original repository and rename it 
+  + git remote -v
+  + git remote rename origin origincvs
+ 
+Add GitHub repository as remote with name origin
 + git remote add origin https://github.com/<githubuser\>/lignum-core.git
-+ Check the remote repositories and current branch
+
+Check the remote repositories and current branch, push the current branch to GitHub 
   + git remote -v
   + git branch
-+ git push -u origin master
+  + git push -u origin master
 
 GitHub should show your project.
