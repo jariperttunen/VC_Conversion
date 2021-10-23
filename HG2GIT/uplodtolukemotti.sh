@@ -1,5 +1,7 @@
 #!/bin/sh
-
+#Assuming a set of cloned repositories in directory
+#this command line framework creates GitHub repositoeries and 
+#pushes current work there.  
 dirnames=`ls`
 for dirname in $dirnames
 do
