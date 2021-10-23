@@ -7,13 +7,13 @@ for dirname in $dirnames
 do
     echo $dirname
     pushd $dirname
-    #Assuming cloned repository is origin 
+    #Assuming cloned repository remote name is origin 
     git remote rename origin clonedorigin
     repository=lukemotti/$dirname
     echo $repository
     #gh is part of GitHub CLI (GitHub Command Line Interface)
     gh repo create $repository --private --confirm
-    #GitHub is origin by default, assuming the branch name is master
+    #GitHub repository remote name is origin by default, assuming the current *branch* name is master
     git push origin master
     popd
     #exit
