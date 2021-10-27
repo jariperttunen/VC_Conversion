@@ -14,6 +14,7 @@ do
     #gh is part of GitHub CLI (GitHub Command Line Interface)
     gh repo create $repository --private --confirm
     #GitHub repository remote name is origin by default, assuming the current *branch* name is master
+    #NOTE: each branch must be pushed explicitely, check branches: git branch --all
     git push origin master
     popd
     #exit
